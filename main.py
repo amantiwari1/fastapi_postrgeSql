@@ -66,6 +66,10 @@ async def shutdown():
 
 
 
+@app.get("/")
+async def read_main():
+    return {"msg": "Hello World"}
+
 @app.get("/note/", response_model=List[Note], status_code = status.HTTP_200_OK)
 async def read_notes(skip: int = 0, take: int = 20):
     query = notes.select().offset(skip).limit(take)
