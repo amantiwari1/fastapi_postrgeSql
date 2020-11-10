@@ -1,6 +1,5 @@
-FROM amantiwari1/collegeapi:v0
+FROM amantiwari1/collegeapi:latest
 WORKDIR /usr/src/app
-RUN pip install pytest requests
 COPY main.py main.py
 COPY test_main.py test_main.py
 RUN pytest
